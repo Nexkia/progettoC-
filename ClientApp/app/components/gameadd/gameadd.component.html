@@ -1,0 +1,32 @@
+﻿
+
+<div class="col-md-6 col-md-offset-3">
+    <h2>Addgame</h2>
+    <form name="form" (ngSubmit)="f.form.valid && add() " #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="model.name" #name="ngModel" required />
+            <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+        </div>
+        <div class="form-group" id="slidecontainer">
+            <label for="valutation">Valutation</label>
+            <input type="range" class="form-control" id="slider"name="valutation" [(ngModel)]="model.valutation" #valutation="ngModel" min ="1" max ="5" required />
+            <div *ngIf="f.submitted && !valutation.valid" class="help-block">valutation is required</div>
+        </div>
+        <div class="form-group">
+            <label for="console">Console</label>
+            <input type="text" class="form-control" name="console" [(ngModel)]="model.console" #console="ngModel" required />
+            <div *ngIf="f.submitted && !console.valid" class="help-block">console is required</div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" name="description" [(ngModel)]="model.description" #description="ngModel" required />
+            <div *ngIf="f.submitted && !description.valid" class="help-block">description is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">add</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a [routerLink]="['/games']" class="btn btn-link">back</a>
+        </div>
+    </form>
+</div>

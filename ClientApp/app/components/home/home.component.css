@@ -1,0 +1,20 @@
+﻿.formarea {
+        width: 50%;
+        height: 50%;
+        min-width: 200px;
+        max-width: 400px;
+        padding-top: 10%;
+}
+button {
+    background-color: #1C6EA4;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+}

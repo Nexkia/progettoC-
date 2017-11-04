@@ -1,0 +1,20 @@
+﻿<body>
+    <h1>Dettagli Giochi</h1>
+    <p *ngIf="!game"><em>Loading...</em></p>
+    <div *ngIf="game">
+        <div>
+            <ul class="txt">
+                <li>Nome: {{ game.name }}</li>
+                <li>Valutazione: {{ game.valutation }}</li>
+                <li>Console: {{ game.console }}</li>
+            </ul>
+        </div>
+        <div id="description">
+            <p> Descrizione</p>
+            <p>{{ game.description}}</p>
+        </div>
+        <div>
+            <button (click)="goBack()">Back</button>
+        </div>
+    </div>
+</body>

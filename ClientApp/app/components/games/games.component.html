@@ -1,0 +1,30 @@
+<h1>I miei giochi</h1>
+
+<div class="form-group">
+    <label>Filter by Console </label>
+    <input type="text" id="inputName" [(ngModel)]="inputName" />
+    <input type="button" (click)="FilterByConsole()" value="Apply" />
+</div>
+
+<table class='blueTable' *ngIf="games">
+    <thead>
+        <tr>
+            <th>Titolo</th>
+            <th>Valutazione</th>
+            <th>Console</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let game of games">
+            <td>{{ game.name }}</td>
+            <td>{{game.valutation}}</td>
+            <td>{{game.console}}</td>
+            <td><button (click)="gotoDetail(game.id)">Info</button><button (click)="removeMyGame(game.id)">Remove</button></td>
+
+        </tr>
+
+    </tbody>
+</table>
+<button (click)="gotoAdd(user.id)" style="position:relative; float:right;">Add</button>
+
